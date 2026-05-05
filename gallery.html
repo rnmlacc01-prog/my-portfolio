@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gallery — Joems</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+    }
+
+    .gallery-item {
+      position: relative;
+      border-radius: 8px;
+      overflow: hidden;
+      cursor: pointer;
+      aspect-ratio: 4/3;
+      background: var(--surface);
+      border: 1px solid var(--border);
+    }
+
+    .gallery-item:nth-child(1) { grid-column: span 2; aspect-ratio: 16/9; }
+    .gallery-item:nth-child(5) { grid-column: span 2; aspect-ratio: 16/9; }
+
+    .gallery-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.4s ease;
+    }
+
+    .gallery-item:hover .gallery-img { transform: scale(1.05); }
+
+    .gallery-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, transparent 60%);
+      opacity: 0;
+      transition: opacity 0.3s;
+      display: flex;
+      align-items: flex-end;
+      padding: 20px;
+    }
+
+    .gallery-item:hover .gallery-overlay { opacity: 1; }
+
+    .gallery-caption {
+      font-size: 0.85rem;
+      color: var(--white);
+      font-weight: 500;
+    }
+
+    .gallery-category {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.68rem;
+      color: var(--accent);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      display: block;
+      margin-bottom: 4px;
+    }
+
+    #lightbox {
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.92);
+      z-index: 1000;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s;
+    }
+
+    #lightbox.open { opacity: 1; pointer-events: all; }
+    #lightbox img { max-width: 90vw; max-height: 75vh; border-radius: 4px; object-fit: contain; }
+    .lb-caption { color: var(--text-dim); font-size: 0.9rem; margin-top: 20px; }
+    .lb-close {
+      position: absolute;
+      top: 24px; right: 32px;
+      font-size: 2rem;
+      color: var(--text-dim);
+      cursor: pointer;
+      background: none;
+      border: none;
+      line-height: 1;
+    }
+    .lb-close:hover { color: var(--white); }
+
+    @media (max-width: 768px) {
+      .gallery-grid { grid-template-columns: 1fr; }
+      .gallery-item:nth-child(1),
+      .gallery-item:nth-child(5) { grid-column: 1; aspect-ratio: 4/3; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-logo">Portfolioems.</a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="gallery.html">Gallery</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="skills.html">Skills</a></li>
+    <li><a href="projects.html">Projects</a></li>
+    <li><a href="resume.html">Resume</a></li>
+    <li><a href="blog.html">Blog</a></li>
+    <li><a href="hobbies.html">Hobbies</a></li>
+    <li><a href="testimonials.html">Testimonials</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+  <button class="hamburger"><span></span><span></span><span></span></button>
+</nav>
+
+<section id="gallery">
+  <div class="section-label">My Life</div>
+  <h1 class="section-title">Photo Gallery</h1>
+  <p class="section-subtitle">A collection of personal photos and life moments that represent who is "Joems" they know from school activities to personal milestones.</p>
+
+  <div class="gallery-grid">
+
+    <div class="gallery-item reveal">
+      <img src="Me.jfif" alt="My Profile" class="gallery-img">
+
+      <div class="gallery-overlay">
+        <div>
+          <span class="gallery-category">Portrait</span>
+          <div class="gallery-caption">My Profile Portrait</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="gallery-item reveal">
+      <img src="Workout.jfif" alt="My Profile" class="gallery-img">
+
+      <div class="gallery-overlay">
+        <div>
+          <span class="gallery-category">Hobby</span>
+          <div class="gallery-caption">Working Out</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="gallery-item reveal">
+      <img src="DanceAct.jfif" alt="My Profile" class="gallery-img">
+
+      <div class="gallery-overlay">
+        <div>
+          <span class="gallery-category">School</span>
+          <div class="gallery-caption">School Activity(Dance)</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="gallery-item reveal">
+      <img src="SportsAct.jfif" alt="My Profile" class="gallery-img">
+
+      <div class="gallery-overlay">
+        <div>
+          <span class="gallery-category">School</span>
+          <div class="gallery-caption">School Activity(Sports)</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="gallery-item reveal">
+      <img src="ActioFigure.jfif" alt="My Profile" class="gallery-img">
+
+      <div class="gallery-overlay">
+        <div>
+          <span class="gallery-category">Hobby</span>
+          <div class="gallery-caption">Some of my action figures</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="gallery-item reveal">
+      <img src="Game.jfif" alt="My Profile" class="gallery-img">
+
+      <div class="gallery-overlay">
+        <div>
+          <span class="gallery-category">Hobby</span>
+          <div class="gallery-caption">One of the best games I've ever played</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<div id="lightbox">
+  <button class="lb-close">&times;</button>
+  <img src="" alt="Gallery image">
+  <div class="lb-caption"></div>
+</div>
+
+<script src="main.js"></script>
+</body>
+</html>

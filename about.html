@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About — Joems</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .about-layout {
+      display: grid;
+      grid-template-columns: 1fr 1.4fr;
+      gap: 80px;
+      align-items: start;
+    }
+
+    .about-photo-wrap {
+      position: sticky;
+      top: calc(var(--nav-h) + 40px);
+    }
+
+    .about-photo {
+      max-width: 340px;
+      aspect-ratio: 3/4;
+      margin: auto;
+    }
+
+    .about-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .about-photo::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(201,168,76,0.05), transparent);
+    }
+
+    .about-photo-corner {
+      position: absolute;
+      width: 32px; height: 32px;
+      border-color: var(--accent);
+      border-style: solid;
+      border-width: 0;
+    }
+
+    .about-photo-corner.tl { top: 12px; left: 12px; border-top-width: 2px; border-left-width: 2px; border-radius: 2px 0 0 0; }
+    .about-photo-corner.br { bottom: 12px; right: 12px; border-bottom-width: 2px; border-right-width: 2px; border-radius: 0 0 2px 0; }
+
+    .about-photo-tag {
+      position: absolute;
+      bottom: 20px;
+      left: 20px;
+      background: rgba(10,10,15,0.8);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      padding: 10px 16px;
+      backdrop-filter: blur(12px);
+    }
+
+    .about-photo-tag .tag-name {
+      font-weight: 500;
+      font-size: 0.9rem;
+      color: var(--white);
+    }
+
+    .about-photo-tag .tag-role {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      margin-top: 2px;
+    }
+
+    .about-bio {
+      font-size: 1.05rem;
+      line-height: 1.85;
+      color: var(--text-dim);
+      margin-bottom: 40px;
+    }
+
+    .about-bio p + p { margin-top: 20px; }
+
+    .about-quote {
+      border-left: 3px solid var(--accent);
+      padding: 20px 24px;
+      margin: 40px 0;
+      background: rgba(201,168,76,0.04);
+      border-radius: 0 8px 8px 0;
+    }
+
+    .about-quote p {
+      font-family: 'Playfair Display', serif;
+      font-style: italic;
+      font-size: 1.15rem;
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    .info-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin-top: 40px;
+    }
+
+    .info-item {
+      padding: 20px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+    }
+
+    .info-label {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.68rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 6px;
+    }
+
+    .info-value {
+      font-size: 0.95rem;
+      color: var(--text);
+      font-weight: 500;
+    }
+
+    .values-section {
+      margin-top: 60px;
+    }
+
+    .values-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      margin-top: 32px;
+    }
+
+    .value-card {
+      padding: 24px 20px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      text-align: center;
+      transition: all 0.3s;
+    }
+
+    .value-card:hover {
+      border-color: rgba(201,168,76,0.3);
+      transform: translateY(-4px);
+    }
+
+    .value-icon {
+      font-size: 2rem;
+      margin-bottom: 12px;
+      display: block;
+    }
+
+    .value-title {
+      font-weight: 600;
+      font-size: 0.9rem;
+      color: var(--white);
+      margin-bottom: 6px;
+    }
+
+    .value-desc {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      line-height: 1.5;
+    }
+
+    @media (max-width: 768px) {
+      .about-layout { grid-template-columns: 1fr; gap: 40px; }
+      .about-photo-wrap { position: static; }
+      .about-photo { aspect-ratio: 1/1; }
+      .values-grid { grid-template-columns: 1fr; }
+      .info-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-logo">Portfolioems.</a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="gallery.html">Gallery</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="skills.html">Skills</a></li>
+    <li><a href="projects.html">Projects</a></li>
+    <li><a href="resume.html">Resume</a></li>
+    <li><a href="blog.html">Blog</a></li>
+    <li><a href="hobbies.html">Hobbies</a></li>
+    <li><a href="testimonials.html">Testimonials</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+  <button class="hamburger"><span></span><span></span><span></span></button>
+</nav>
+
+<section id="about">
+  <div class="section-label">Who I Am</div>
+
+  <div class="about-layout">
+    <div class="about-photo-wrap reveal">
+      <div class="about-photo">
+        <div class="about-photo-corner tl"></div>
+        <div class="about-photo-corner br"></div>
+
+        <img src="Me.jfif" alt="Profile Photo" class="about-img">
+
+        <div class="about-photo-tag">
+          <div class="tag-name">Joems Carl P. Maristela</div>
+          <div class="tag-role">Younger me who dreamed to be a successful person someday</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="about-info">
+      <h1 class="section-title reveal">About <em style="font-style:italic; color:var(--accent);">Me</em></h1>
+
+      <div class="about-bio reveal">
+        <p>
+          Hello! I'm <strong style="color:var(--white);">Joems Carl O. Maristela</strong>, a passionate web design student currently studying
+          at <strong style="color:var(--white);">Clark College of Science and Technology</strong>. I have always been fascinated by how technology and
+          creativity intersect, and web design is my way of bringing those two worlds together.
+        </p>
+        <p>
+          I'm currently in 2nd Year pursuing BSOA. Outside of academics,
+          I enjoy weightlifting also playing offline/online games and constantly seek new ways to improve my skills
+          in design and development.
+        </p>
+        <p>
+          My goal is to become a professional web designer who creates meaningful digital
+          experiences and to be a successful person outside and inside that make a positive impact on people's lives.
+        </p>
+      </div>
+
+      <div class="about-quote reveal">
+        <p>"Time is Gold, spend every single second of it joyfully"</p>
+      </div>
+
+      <div class="info-grid reveal">
+        <div class="info-item">
+          <div class="info-label">Full Name</div>
+          <div class="info-value">Joems Carl O. Maristela</div>
+        </div>
+        <div class="info-item">
+          <div class="info-label">School</div>
+          <div class="info-value">Clark College of Science and Technology</div>
+        </div>
+        <div class="info-item">
+          <div class="info-label">Year</div>
+          <div class="info-value">2nd Year</div>
+        </div>
+        <div class="info-item">
+          <div class="info-label">Course</div>
+          <div class="info-value">BSOA</div>
+        </div>
+        <div class="info-item">
+          <div class="info-label">Location</div>
+          <div class="info-value">Bamban Tarlac, Philippines</div>
+        </div>
+        <div class="info-item">
+          <div class="info-label">Email</div>
+          <div class="info-value">joemscarlmaristela6@gmail.com</div>
+        </div>
+      </div>
+
+      <div class="values-section reveal">
+        <h3 style="font-family:'Playfair Display',serif; font-size:1.5rem; margin-bottom:8px; color:var(--white);">My Values</h3>
+        <p style="color:var(--text-muted); font-size:0.9rem; margin-bottom:24px;">What drives me every day</p>
+
+        <div class="values-grid">
+          <div class="value-card">
+            <span class="value-icon">🎨</span>
+            <div class="value-title">Creativity</div>
+            <div class="value-desc">I believe every problem has a creative solution waiting to be found.</div>
+          </div>
+          <div class="value-card">
+            <span class="value-icon">📚</span>
+            <div class="value-title">Learning</div>
+            <div class="value-desc">I'm always eager to learn new technologies and improve my craft.</div>
+          </div>
+          <div class="value-card">
+            <span class="value-icon">🤝</span>
+            <div class="value-title">Teamwork</div>
+            <div class="value-desc">Great things are built through collaboration and shared vision.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script src="main.js"></script>
+</body>
+</html>

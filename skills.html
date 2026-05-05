@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Skills — Joems</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .skills-layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+    }
+
+    .skills-block-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.4rem;
+      color: var(--white);
+      margin-bottom: 32px;
+      padding-bottom: 16px;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .skills-block-title span {
+      font-size: 1.2rem;
+    }
+
+    .skill-item {
+      margin-bottom: 28px;
+    }
+
+    .skill-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 10px;
+    }
+
+    .skill-name {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--text);
+    }
+
+    .tag-cloud {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 32px;
+    }
+
+    .skill-tag {
+      padding: 8px 18px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 100px;
+      font-size: 0.8rem;
+      color: var(--text-dim);
+      transition: all 0.2s;
+      cursor: default;
+    }
+
+    .skill-tag:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+      background: rgba(201,168,76,0.05);
+    }
+
+    .skill-tag.accent {
+      background: rgba(201,168,76,0.1);
+      border-color: rgba(201,168,76,0.3);
+      color: var(--accent);
+    }
+
+    .soft-skills-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin-top: 32px;
+    }
+
+    .soft-card {
+      padding: 20px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      transition: all 0.3s;
+    }
+
+    .soft-card:hover {
+      border-color: rgba(201,168,76,0.3);
+      transform: translateY(-2px);
+    }
+
+    .soft-icon { font-size: 1.4rem; margin-bottom: 8px; display: block; }
+    .soft-name { font-size: 0.88rem; font-weight: 600; color: var(--white); margin-bottom: 4px; }
+    .soft-desc { font-size: 0.78rem; color: var(--text-muted); line-height: 1.4; }
+
+    .tools-section {
+      margin-top: 60px;
+      padding-top: 60px;
+      border-top: 1px solid var(--border);
+    }
+
+    .tools-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 16px;
+      margin-top: 32px;
+    }
+
+    .tool-item {
+      padding: 24px 16px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      text-align: center;
+      transition: all 0.3s;
+    }
+
+    .tool-item:hover {
+      border-color: rgba(201,168,76,0.3);
+      transform: translateY(-4px);
+    }
+
+    .tool-icon { font-size: 1.8rem; display: block; margin-bottom: 8px; }
+    .tool-name { font-size: 0.78rem; color: var(--text-dim); }
+
+    @media (max-width: 768px) {
+      .skills-layout { grid-template-columns: 1fr; gap: 40px; }
+      .soft-skills-grid { grid-template-columns: 1fr; }
+      .tools-grid { grid-template-columns: repeat(3, 1fr); }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-logo">Portfolioems.</a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="gallery.html">Gallery</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="skills.html">Skills</a></li>
+    <li><a href="projects.html">Projects</a></li>
+    <li><a href="resume.html">Resume</a></li>
+    <li><a href="blog.html">Blog</a></li>
+    <li><a href="hobbies.html">Hobbies</a></li>
+    <li><a href="testimonials.html">Testimonials</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+  <button class="hamburger"><span></span><span></span><span></span></button>
+</nav>
+
+<section id="skills">
+  <div class="section-label">What I Know</div>
+  <h1 class="section-title">My Skills</h1>
+  <p class="section-subtitle">A showcase of the technical and interpersonal skills I've developed through study and practice.</p>
+
+  <div class="skills-section skills-layout">
+
+    <div class="skills-block reveal">
+      <h3 class="skills-block-title"><span>💻</span> Technical Skills</h3>
+
+      <div class="skill-item">
+        <div class="skill-header">
+          <span class="skill-name">- HTML5</span>
+        </div>
+      </div>
+
+      <div class="skill-item">
+        <div class="skill-header">
+          <span class="skill-name">- CSS3</span>
+        </div>
+      </div>
+
+      <div class="skill-item">
+        <div class="skill-header">
+          <span class="skill-name">- JavaScript</span>
+        </div>
+      </div>
+
+      <div class="skill-item">
+        <div class="skill-header">
+          <span class="skill-name">- Responsive Design</span>
+        </div>
+      </div>
+
+      <div class="skill-item">
+        <div class="skill-header">
+          <span class="skill-name">- UI/UX Design</span>
+        </div>
+      </div>
+
+      <div class="skill-item">
+        <div class="skill-header">
+          <span class="skill-name">- Creativity</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="skills-block reveal">
+      <h3 class="skills-block-title"><span>🤝</span> Soft Skills</h3>
+
+      <div class="soft-skills-grid">
+        <div class="soft-card">
+          <span class="soft-icon">🗣️</span>
+          <div class="soft-name">Communication</div>
+          <div class="soft-desc">Able to express ideas clearly both verbally and in writing.</div>
+        </div>
+        <div class="soft-card">
+          <span class="soft-icon">🧩</span>
+          <div class="soft-name">Problem Solving</div>
+          <div class="soft-desc">Analytical approach to challenges and finding creative solutions.</div>
+        </div>
+        <div class="soft-card">
+          <span class="soft-icon">👥</span>
+          <div class="soft-name">Teamwork</div>
+          <div class="soft-desc">Work well in groups and value collaborative effort.</div>
+        </div>
+        <div class="soft-card">
+          <span class="soft-icon">⏰</span>
+          <div class="soft-name">Time Management</div>
+          <div class="soft-desc">Manage deadlines and prioritize tasks effectively.</div>
+        </div>
+        <div class="soft-card">
+          <span class="soft-icon">🔄</span>
+          <div class="soft-name">Adaptability</div>
+          <div class="soft-desc">Quick to learn and adjust to new environments and tools.</div>
+        </div>
+        <div class="soft-card">
+          <span class="soft-icon">🎯</span>
+          <div class="soft-name">Attention to Detail</div>
+          <div class="soft-desc">Care about quality and precision in everything I create.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="tools-section reveal">
+    <h3 class="section-title" style="font-size:2rem;">Tools I Use</h3>
+    <div class="tools-grid">
+      <div class="tool-item">
+        <span class="tool-icon">🌐</span>
+        <div class="tool-name">VS Code</div>
+      </div>
+      <div class="tool-item">
+        <span class="tool-icon">🎨</span>
+        <div class="tool-name">Canva</div>
+      </div>
+      <div class="tool-item">
+        <span class="tool-icon">📐</span>
+        <div class="tool-name">Figma</div>
+      </div>
+      <div class="tool-item">
+        <span class="tool-icon">🐙</span>
+        <div class="tool-name">GitHub</div>
+      </div>
+      <div class="tool-item">
+        <span class="tool-icon">🖥️</span>
+        <div class="tool-name">Chrome DevTools</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script src="main.js"></script>
+</body>
+</html>

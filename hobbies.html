@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hobbies — Joems</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .hobbies-hero-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      margin-bottom: 80px;
+    }
+
+    .hobby-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 36px 28px;
+      text-align: center;
+      transition: all 0.3s;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hobby-card::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, transparent, rgba(201,168,76,0.03));
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+
+    .hobby-card:hover {
+      border-color: rgba(201,168,76,0.3);
+      transform: translateY(-6px);
+      box-shadow: 0 24px 60px rgba(0,0,0,0.4);
+    }
+
+    .hobby-card:hover::before { opacity: 1; }
+
+    .hobby-icon {
+      font-size: 3rem;
+      display: block;
+      margin-bottom: 16px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .hobby-name {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--white);
+      margin-bottom: 10px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .hobby-desc {
+      font-size: 0.85rem;
+      color: var(--text-dim);
+      line-height: 1.7;
+      position: relative;
+      z-index: 1;
+    }
+
+    .hobby-tag {
+      display: inline-block;
+      margin-top: 16px;
+      font-family: 'DM Mono', monospace;
+      font-size: 0.68rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--accent);
+      background: rgba(201,168,76,0.1);
+      padding: 4px 12px;
+      border-radius: 100px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .featured-hobby {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 48px;
+      align-items: center;
+      padding: 60px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      margin-bottom: 48px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .featured-hobby::before {
+      content: '';
+      position: absolute;
+      right: -100px; top: -100px;
+      width: 300px; height: 300px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(201,168,76,0.05), transparent 70%);
+    }
+
+    .routine-section {
+      margin-top: 60px;
+    }
+
+    .routine-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+      margin-top: 32px;
+    }
+
+    .routine-item {
+      padding: 24px 20px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      text-align: center;
+      transition: all 0.3s;
+    }
+
+    .routine-item:hover {
+      border-color: rgba(201,168,76,0.2);
+      transform: translateY(-4px);
+    }
+
+    .routine-time {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.72rem;
+      color: var(--accent);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin-bottom: 8px;
+    }
+
+    .routine-icon { font-size: 1.8rem; display: block; margin-bottom: 8px; }
+    .routine-name { font-size: 0.88rem; font-weight: 600; color: var(--white); margin-bottom: 4px; }
+    .routine-detail { font-size: 0.75rem; color: var(--text-muted); }
+
+    @media (max-width: 768px) {
+      .hobbies-hero-grid { grid-template-columns: 1fr; }
+      .featured-hobby { grid-template-columns: 1fr; padding: 32px; gap: 32px; }
+      .routine-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-logo">Portfolioems.</a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="gallery.html">Gallery</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="skills.html">Skills</a></li>
+    <li><a href="projects.html">Projects</a></li>
+    <li><a href="resume.html">Resume</a></li>
+    <li><a href="blog.html">Blog</a></li>
+    <li><a href="hobbies.html">Hobbies</a></li>
+    <li><a href="testimonials.html">Testimonials</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+  <button class="hamburger"><span></span><span></span><span></span></button>
+</nav>
+
+<section id="hobbies">
+  <div class="section-label">Beyond School</div>
+  <h1 class="section-title">Hobbies & Interests</h1>
+  <p class="section-subtitle">Life isn't just about work — here are the things that bring me joy and help me unwind outside of academics.</p>
+
+  <div class="hobbies-hero-grid">
+
+    <div class="hobby-card reveal">
+      <span class="hobby-icon">🎵</span>
+      <div class="hobby-name">Listening to Music</div>
+      <p class="hobby-desc">Music is my hobby since then, it makes me calm and focus everytime.</p>
+      <span class="hobby-tag">Music</span>
+    </div>
+
+    <div class="hobby-card reveal">
+      <span class="hobby-icon">🤖</span>
+      <div class="hobby-name">Collection of Action Figures</div>
+      <p class="hobby-desc">I collect action figures such as comic and live action characters to appreciate the incredible artistry behind each design.</p>
+      <span class="hobby-tag">Collecting</span>
+    </div>
+
+    <div class="hobby-card reveal">
+      <span class="hobby-icon">🏃</span>
+      <div class="hobby-name">Working Out</div>
+      <p class="hobby-desc">I prioritize working out to build a stronger version of myself, both physically and mentally.</p>
+      <span class="hobby-tag">Active</span>
+    </div>
+
+    <div class="hobby-card reveal">
+      <span class="hobby-icon">🏖️</span>
+      <div class="hobby-name">Travelling</div>
+      <p class="hobby-desc">I love traveling to explore new cultures and create unforgettable memories through unique experiences.</p>
+      <span class="hobby-tag">Explore</span>
+    </div>
+
+    <div class="hobby-card reveal">
+      <span class="hobby-icon">🎮</span>
+      <div class="hobby-name">Gaming</div>
+      <p class="hobby-desc">I enjoy gaming as a way to challenge my strategic thinking and immerse myself in incredible interactive stories.</p>
+      <span class="hobby-tag">Digital</span>
+    </div>
+  </div>
+
+  <div class="routine-section">
+    <div class="section-label">Daily Life</div>
+    <h2 class="section-title" style="font-size:2rem;">A Day In My Life</h2>
+    <div class="routine-grid">
+      <div class="routine-item reveal">
+        <div class="routine-time">Morning</div>
+        <span class="routine-icon">🌅</span>
+        <div class="routine-name">Wake Up & Prep</div>
+        <div class="routine-detail">Start the day with skincare routine, jogging if there's an extra time, then prepare for school</div>
+      </div>
+      <div class="routine-item reveal">
+        <div class="routine-time">Daytime</div>
+        <span class="routine-icon">🏫</span>
+        <div class="routine-name">School / Study</div>
+        <div class="routine-detail">Classes, projects, and learning</div>
+      </div>
+      <div class="routine-item reveal">
+        <div class="routine-time">Afternoon</div>
+        <span class="routine-icon">🎯</span>
+        <div class="routine-name">Hobby Time</div>
+        <div class="routine-detail">Pursuing my interests and passions</div>
+      </div>
+      <div class="routine-item reveal">
+        <div class="routine-time">Evening</div>
+        <span class="routine-icon">🌙</span>
+        <div class="routine-name">Relax & Recharge</div>
+        <div class="routine-detail">Wind down and rest for tomorrow</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script src="main.js"></script>
+</body>
+</html>

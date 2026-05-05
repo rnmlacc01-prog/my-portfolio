@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Resume — Joems</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .resume-layout {
+      display: grid;
+      grid-template-columns: 300px 1fr;
+      gap: 48px;
+    }
+
+    .resume-sidebar {
+      position: sticky;
+      top: calc(var(--nav-h) + 40px);
+      height: fit-content;
+    }
+
+    .resume-profile {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 32px 24px;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .resume-avatar {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      background: var(--bg3);
+      border: 3px solid var(--accent);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 16px;
+      color: var(--text-muted);
+    }
+
+    .resume-name {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: var(--white);
+      margin-bottom: 4px;
+    }
+
+    .resume-role-tag {
+      font-size: 0.8rem;
+      color: var(--accent);
+      background: rgba(201,168,76,0.1);
+      padding: 4px 12px;
+      border-radius: 100px;
+      display: inline-block;
+      margin-bottom: 20px;
+    }
+
+    .contact-list {
+      list-style: none;
+      text-align: left;
+    }
+
+    .contact-list li {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 8px 0;
+      border-bottom: 1px solid var(--border);
+      font-size: 0.82rem;
+      color: var(--text-dim);
+    }
+
+    .contact-list li:last-child { border: none; }
+
+    .contact-list .icon {
+      font-size: 0.9rem;
+      flex-shrink: 0;
+    }
+
+    .sidebar-section {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 24px;
+      margin-bottom: 20px;
+    }
+
+    .sidebar-title {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.7rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 16px;
+    }
+
+    .sidebar-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .sidebar-tag {
+      padding: 4px 12px;
+      background: var(--bg3);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      font-size: 0.75rem;
+      color: var(--text-dim);
+    }
+
+    .resume-section {
+      margin-bottom: 48px;
+    }
+
+    .resume-section-title {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-family: 'Playfair Display', serif;
+      font-size: 1.4rem;
+      color: var(--white);
+      margin-bottom: 28px;
+      padding-bottom: 14px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .resume-section-icon { font-size: 1.2rem; }
+
+    .timeline {
+      position: relative;
+      padding-left: 24px;
+    }
+
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 0; top: 8px; bottom: 0;
+      width: 1px;
+      background: var(--border);
+    }
+
+    .timeline-item {
+      position: relative;
+      margin-bottom: 36px;
+    }
+
+    .timeline-dot {
+      position: absolute;
+      left: -28px; top: 6px;
+      width: 10px; height: 10px;
+      border-radius: 50%;
+      background: var(--accent);
+      border: 2px solid var(--bg);
+      box-shadow: 0 0 0 3px rgba(201,168,76,0.15);
+    }
+
+    .timeline-period {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.7rem;
+      letter-spacing: 0.1em;
+      color: var(--accent);
+      text-transform: uppercase;
+      margin-bottom: 6px;
+    }
+
+    .timeline-title {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--white);
+      margin-bottom: 2px;
+    }
+
+    .timeline-place {
+      font-size: 0.82rem;
+      color: var(--text-dim);
+      margin-bottom: 10px;
+    }
+
+    .timeline-desc {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      line-height: 1.7;
+    }
+
+    .timeline-desc li { margin-bottom: 4px; }
+
+    @media (max-width: 900px) {
+      .resume-layout { grid-template-columns: 1fr; }
+      .resume-sidebar { position: static; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-logo">Portfolioems.</a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="gallery.html">Gallery</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="skills.html">Skills</a></li>
+    <li><a href="projects.html">Projects</a></li>
+    <li><a href="resume.html">Resume</a></li>
+    <li><a href="blog.html">Blog</a></li>
+    <li><a href="hobbies.html">Hobbies</a></li>
+    <li><a href="testimonials.html">Testimonials</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+  <button class="hamburger"><span></span><span></span><span></span></button>
+</nav>
+
+<section id="resume">
+  <div class="section-label">My Background</div>
+  <h1 class="section-title">Resume</h1>
+
+  <div class="resume-layout">
+
+    <div class="resume-sidebar reveal">
+      <div class="resume-profile">
+        <div class="resume-avatar">
+          <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
+        </div>
+        <div class="resume-name">Joems Carl O. Maristela</div>
+        <div class="resume-role-tag">Student</div>
+        <ul class="contact-list">
+          <li><span class="icon">📧</span> joemscarlmaristela6@email.com</li>
+          <li><span class="icon">📱</span> +63 910 404 2868</li>
+          <li><span class="icon">📍</span> Bamban Tarlac, Philippines</li>
+          <li><span class="icon">🌐</span> portfolioems.com</li>
+        </ul>
+      </div>
+
+      <div class="sidebar-section">
+        <div class="sidebar-title">Technical Skills</div>
+        <div class="sidebar-tags">
+          <span class="sidebar-tag">HTML5</span>
+          <span class="sidebar-tag">CSS3</span>
+          <span class="sidebar-tag">JavaScript</span>
+          <span class="sidebar-tag">Responsive Design</span>
+          <span class="sidebar-tag">Figma</span>
+          <span class="sidebar-tag">Canva</span>
+        </div>
+      </div>
+
+      <div class="sidebar-section">
+        <div class="sidebar-title">Languages</div>
+        <div class="sidebar-tags">
+          <span class="sidebar-tag">Filipino — Native</span>
+          <span class="sidebar-tag">English — Proficient</span>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="resume-main reveal">
+
+      <div class="resume-section">
+        <h3 class="resume-section-title">
+          <span class="resume-section-icon">🎓</span> Education
+        </h3>
+        <div class="timeline">
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-period">2025 — Present</div>
+            <div class="timeline-title">Bachelor of Science in Office Administration</div>
+            <div class="timeline-place">Clark College of Science and Technology • Clark Pampanga</div>
+            <ul class="timeline-desc" style="padding-left:16px;">
+              <li>Studying HTML, CSS, and JavaScript fundamentals</li>
+            </ul>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-period">2017 - 2023</div>
+            <div class="timeline-title">Junior and Senior High School Diploma</div>
+            <div class="timeline-place">Sto Nino Academy • Bamban Tarlac</div>
+            <ul class="timeline-desc" style="padding-left:16px;">
+            </ul>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<script src="main.js"></script>
+</body>
+</html>
